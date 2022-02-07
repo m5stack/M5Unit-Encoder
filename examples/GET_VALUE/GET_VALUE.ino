@@ -1,4 +1,5 @@
-#include <M5StickC.h>
+
+#include <M5Stack.h>
 #include <M5GFX.h>
 #include "UNIT_ENCODER.h"
 
@@ -8,7 +9,7 @@ UNIT_ENCODER sensor;
 
 void setup() {
     M5.begin();  // Init M5Stack.  初始化M5Stack
-    sensor.begin(&Wire, ENCODER_ADDR, 32, 33);
+    sensor.begin();
     display.begin();
     display.setRotation(1);
     canvas.setTextSize(2);
