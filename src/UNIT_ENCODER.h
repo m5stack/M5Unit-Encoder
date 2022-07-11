@@ -1,15 +1,24 @@
-#ifndef __UNIT_ENCODER_H
-#define __UNIT_ENCODER_H
+/*!
+ * @brief A rotary encoder expansion From M5Stack
+ * @copyright Copyright (c) 2022 by M5Stack[https://m5stack.com]
+ *
+ * @Links [Unit Encoder](https://docs.m5stack.com/en/unit/encoder)
+ * @version  V0.0.1
+ * @date  2022-07-11
+ */
+#ifndef _UNIT_ENCODER_H_
+#define _UNIT_ENCODER_H_
 
 #include "Arduino.h"
 #include "Wire.h"
+#include "pins_arduino.h"
 
 #define ENCODER_ADDR 0x40
 #define ENCODER_REG  0x10
 #define BUTTON_REG   0x20
 #define RGB_LED_REG  0x30
 
-class UNIT_ENCODER {
+class Unit_Encoder {
    private:
     uint8_t _addr;
     TwoWire* _wire;
@@ -21,7 +30,7 @@ class UNIT_ENCODER {
 
    public:
     void begin(TwoWire* wire = &Wire, uint8_t addr = ENCODER_ADDR,
-               uint8_t sda = 21, uint8_t scl = 22, uint32_t speed = 200000L);
+               uint8_t sda = SDA, uint8_t scl = SCL, uint32_t speed = 200000L);
     signed short int getEncoderValue();
     bool getButtonStatus();
     void setLEDColor(uint8_t index, uint32_t color);

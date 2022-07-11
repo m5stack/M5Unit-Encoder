@@ -1,13 +1,15 @@
-# UNIT ENCODER
+# M5Unit-Encoder
 
 ## Overview
 
-Contains case programs of M5Stack UNIT ENCODER.
+### SKU:U135
+
+Contains case programs of M5Stack Unit Encoder.
 
 ## Related Link
 
-- [Document - UNIT ENCODER](https://docs.m5stack.com/en/unit/encoder)
+- [Document & Datasheet - M5Unit-Encoder](https://docs.m5stack.com/en/unit/encoder)
 
 ## License
 
-[ENCODER - MIT](LICENSE)
+[M5Unit-Encoder - MIT](LICENSE)

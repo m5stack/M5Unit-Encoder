@@ -1,11 +1,25 @@
-
+/*
+*******************************************************************************
+* Copyright (c) 2021 by M5Stack
+*                  Equipped with M5Core sample source code
+*                          配套  M5Core 示例源代码
+* Visit for more information: https://docs.m5stack.com/en/unit/encoder
+* 获取更多资料请访问: https://docs.m5stack.com/zh_CN/unit/encoder
+*
+* Describe: Encoder.  旋转编码器
+* Date: 2022/7/11
+*******************************************************************************
+  Please connect to Port A,Use ADC Unit to convert 0 ~ 12V analog voltage into
+  16-bit data and display it on the screen. 请连接端口A,利用ADC单元将0 ~
+  12V模拟电压转换成16位数据显示在屏幕上。
+*/
 #include <M5Stack.h>
 #include <M5GFX.h>
-#include "UNIT_ENCODER.h"
+#include "Unit_Encoder.h"
 
 M5GFX display;
 M5Canvas canvas(&display);
-UNIT_ENCODER sensor;
+Unit_Encoder sensor;
 
 void setup() {
     M5.begin();  // Init M5Stack.  初始化M5Stack
