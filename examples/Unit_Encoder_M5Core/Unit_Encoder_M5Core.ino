@@ -9,9 +9,8 @@
 * Describe: Encoder.  旋转编码器
 * Date: 2022/7/11
 *******************************************************************************
-  Please connect to Port A,Use ADC Unit to convert 0 ~ 12V analog voltage into
-  16-bit data and display it on the screen. 请连接端口A,利用ADC单元将0 ~
-  12V模拟电压转换成16位数据显示在屏幕上。
+  Display of rotary encoder values and key status on the screen
+  在屏幕上显示旋转编码器的值和按键状态
 */
 #include <M5Stack.h>
 #include <M5GFX.h>
