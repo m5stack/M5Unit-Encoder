@@ -24,7 +24,7 @@ class Unit_Encoder {
     TwoWire* _wire;
     uint8_t _scl;
     uint8_t _sda;
-    uint8_t _speed;
+    uint32_t _speed;
     void writeBytes(uint8_t addr, uint8_t reg, uint8_t* buffer, uint8_t length);
     void readBytes(uint8_t addr, uint8_t reg, uint8_t* buffer, uint8_t length);
 
