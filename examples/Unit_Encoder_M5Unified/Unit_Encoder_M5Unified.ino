@@ -1,21 +1,20 @@
 /*
   Display of rotary encoder values and key status on the screen
 */
-#include <M5Core2.h>
-#include <M5GFX.h>
+#include <M5Unified.h>
 #include "Unit_Encoder.h"
 
-M5GFX display;
-M5Canvas canvas(&display);
+M5Canvas canvas(&M5.Display);
 Unit_Encoder sensor;
 
 void setup() {
-    M5.begin(true, false, true, true);  // Init M5Core2.  初始化M5Core2
+    auto cfg = M5.config();
+    cfg.clear_display = true;
+    cfg.serial_baudrate = 115200;
+    M5.begin(cfg);
     sensor.begin();
-    display.begin();
-    display.setRotation(1);
-    canvas.setTextSize(2);
     canvas.createSprite(160, 80);
+    canvas.setTextSize(2);
 }
 
 signed short int last_value = 0;
