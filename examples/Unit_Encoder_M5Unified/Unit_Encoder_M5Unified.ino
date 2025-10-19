@@ -13,7 +13,7 @@ void setup() {
     cfg.serial_baudrate = 115200;
     M5.begin(cfg);
     sensor.begin();
-    canvas.createSprite(160, 80);
+    canvas.createSprite(M5.Display.width(), 80);
     canvas.setTextSize(2);
 }
 
