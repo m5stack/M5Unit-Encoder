@@ -22,8 +22,8 @@ signed short int last_value = 0;
 void loop() {
     signed short int encoder_value = sensor.getEncoderValue();
     bool btn_status                = sensor.getButtonStatus();
-    Serial.println(encoder_value);
     if (last_value != encoder_value) {
+        Serial.println(encoder_value);
         if (last_value > encoder_value) {
             sensor.setLEDColor(1, 0x000011);
         } else {
