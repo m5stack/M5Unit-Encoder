@@ -1,8 +1,5 @@
-/*
-  Display of rotary encoder values and key status on the screen
-*/
 #include <M5Unified.h>
-#include "Unit_Encoder.h"
+#include <Unit_Encoder.h>
 
 M5Canvas canvas(&M5.Display);
 Unit_Encoder sensor;
@@ -37,8 +34,11 @@ void loop() {
         sensor.setLEDColor(0, 0xC800FF);
     }
     canvas.fillSprite(BLACK);
-    canvas.drawString("BTN:" + String(btn_status), 10, 10);
-    canvas.drawString("ENCODER:" + String(encoder_value), 10, 40);
+    canvas.setCursor(0, 0);
+    canvas.print("BTN: ");
+    canvas.println(btn_status);
+    canvas.print("ENC: ");
+    canvas.println(encoder_value);
     canvas.pushSprite(0, 0);
     delay(20);
 }
