@@ -11,11 +11,11 @@ void setup() {
     M5.begin(cfg);
     int ex_sda = M5.getPin(m5::ex_i2c_sda);
     int ex_scl = M5.getPin(m5::ex_i2c_scl);
-    Wire.begin(ex_sda, ex_scl);
     if (ex_sda >= 0 && ex_scl >= 0) {
-        Serial.println("Wire.begin(ex_sda, ex_scl) called");
-        sensor.begin(&Wire, ENCODER_ADDR, (uint8_t)ex_sda, (uint8_t)ex_scl); // I2C address for encoder: 0x40 (ENCODER_ADDR defined in Unit_Encoder.h)
+        Wire.begin(ex_sda, ex_scl);
+        sensor.begin(&Wire, ENCODER_ADDR, ex_sda, ex_scl); // I2C address for encoder: 0x40 (ENCODER_ADDR defined in Unit_Encoder.h)
     } else {
+        Wire.begin();
         sensor.begin(&Wire);
     }
     canvas.createSprite(M5.Display.width(), 80);
