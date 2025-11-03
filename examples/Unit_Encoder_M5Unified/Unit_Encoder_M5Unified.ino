@@ -13,11 +13,10 @@ void setup() {
     int ex_scl = M5.getPin(m5::ex_i2c_scl);
     if (ex_sda >= 0 && ex_scl >= 0) {
         Wire.begin(ex_sda, ex_scl);
-        sensor.begin(&Wire, ENCODER_ADDR, ex_sda, ex_scl); // I2C address for encoder: 0x40 (ENCODER_ADDR defined in Unit_Encoder.h)
     } else {
         Wire.begin();
-        sensor.begin(&Wire);
     }
+    sensor.begin(&Wire);
     canvas.createSprite(M5.Display.width(), 80);
     canvas.setTextSize(2);
 }
