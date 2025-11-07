@@ -61,3 +61,8 @@ void Unit_Encoder::setLEDColor(uint8_t index, uint32_t color) {
     data[0] = index;
     writeBytes(_addr, RGB_LED_REG, data, 4);
 }
+
+void Unit_Encoder::setWorkMode(uint8_t mode)
+{
+    writeBytes(_addr, MODE_REG, &mode, 1);
+}
