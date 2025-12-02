@@ -3,8 +3,6 @@
  * @copyright Copyright (c) 2022 by M5Stack[https://m5stack.com]
  *
  * @Links [Unit Encoder](https://docs.m5stack.com/en/unit/encoder)
- * @version  V0.0.2
- * @date  2022-07-11
  */
 #ifndef _UNIT_ENCODER_H_
 #define _UNIT_ENCODER_H_
